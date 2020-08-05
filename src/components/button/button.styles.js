@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import match from '../utils/match';
+import { motion } from 'framer-motion';
 
 const buttonColor = '#A50238';
 const buttonColorDark = '#7Ea1a4';
@@ -58,7 +59,7 @@ const buttonLg = css`
   font-size: 18px;
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   text-align: center;
   text-decoration: none;
   margin: 4px 2px;

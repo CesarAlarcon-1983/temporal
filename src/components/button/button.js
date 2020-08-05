@@ -28,6 +28,7 @@ const ButtonComponent = (props) => {
   } else {
     return (
       <Button
+        as={'a'}
         mode={type === 'search-icon' ? 'ghost' : mode}
         onClick={onClick}
         size={size}

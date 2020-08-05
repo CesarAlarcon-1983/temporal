@@ -5,54 +5,11 @@ import video from '../../assets/videos/intro.mp4';
 import { IntroContent } from './intro.styles';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { BrowserRouter as Router, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { wrapperTransitions, childTransitions } from './intro.transitions';
 
-const MotionWrapper = styled(motion.div)`
+const MotionWrapper = styled(motion.div)``;
 
-`;
-
-const wrapperTransitions = {
-  hidden: { 
-    // opacity: 0
-    x: '-100vw',
-  },
-  show: {
-    x: '0',
-    // opacity: 1,
-    transition: {
-      duration: 1,
-      when: "beforeChildren",
-    }
-  },
-  exit: { 
-    // opacity: 0,
-    x: '100vw',
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-      when: "afterChildren"
-    }
-  }
-}
-
-const childTransitions = {
-  hidden: { 
-    opacity: 0
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 1,
-    }
-  },
-  exit: { 
-    opacity: 0,
-    transition: {
-      duration: 1,
-      ease: "easeInOut"
-    }
-  }
-}
 
 export default function Intro() {
   const url = useHistory();
@@ -66,6 +23,7 @@ export default function Intro() {
     >
       <Wrapper
         video={video}
+        overlay
         overlayColor={'rgba(0,0,0,.2)'}
       >
         <IntroContent
