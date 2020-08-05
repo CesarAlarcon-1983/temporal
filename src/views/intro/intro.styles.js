@@ -1,8 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { motion } from  'framer-motion';
+import { fadeInDownBig, fadeInUpBig } from 'react-animations';
 
-const IntroContent = styled.div`
+const fadeInDown = keyframes`${fadeInDownBig}`;
+const fadeInUp = keyframes`${fadeInUpBig}`;
+
+const IntroContent = styled(motion.div)`
   text-align: center;
   position: relative;
+  top: 50%; 
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
 
   &:after,
   &:before {
@@ -15,11 +23,13 @@ const IntroContent = styled.div`
   }
 
   &:before{
+    animation: 1s 1s ${fadeInDown};
     bottom: 120%;
   }
 
   &:after{
     top: 120%;
+    animation: 1s 1s ${fadeInUp};
   }
 
   p {

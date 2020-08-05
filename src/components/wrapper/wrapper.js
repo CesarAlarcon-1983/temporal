@@ -3,6 +3,7 @@ import { Container, Video, Content, Image, Overlay } from './wrapper.styles';
 
 export default function Wrapper(props) {
   const { video, children, image, overlay, overlayColor, overlayGradient } = props;
+
   return (
     <Container>
       {

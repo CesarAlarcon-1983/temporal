@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion'
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 100%;
   height: 100%;
   position: relative;
@@ -11,7 +12,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Video = styled.video`
+const Video = styled(motion.video)`
   position: absolute;
   top:0;
   bottom:0;
@@ -22,7 +23,7 @@ const Video = styled.video`
   z-index: 0;
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   position: relative;
   z-index: 10;
   width: 100vw;
@@ -30,7 +31,7 @@ const Content = styled.div`
   padding: 5vw;
 `;
 
-const Image = styled.img`
+const Image = styled(motion.img)`
   position: absolute;
   top:0;
   bottom:0;
@@ -41,7 +42,7 @@ const Image = styled.img`
   z-index: 0;
 `;
 
-const Overlay = styled.div`
+const Overlay = styled(motion.div)`
   position: absolute;
   top:0;
   bottom:0;
