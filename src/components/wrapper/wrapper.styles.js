@@ -18,14 +18,15 @@ const Video = styled.video`
   height:100%;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 1;
+  opacity: .8;
   z-index: 0;
 `;
 
 const Content = styled.div`
   position: relative;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 5vw;
 `;
 
