@@ -7,52 +7,62 @@ import food3 from '../../assets/images/food3.jpg';
 import food4 from '../../assets/images/food4.jpg';
 import food5 from '../../assets/images/food5.jpg';
 import food6 from '../../assets/images/food6.jpg';
-import { ImageButton, ButtonList, SectionTitle } from './food-course.styles';
+import { ButtonList, SectionTitle } from './food-course.styles';
 import Nav from '../../components/nav/nav';
+import ImageButton from '../../components/imageButton/imageButton';
 import video from '../../assets/videos/main.mp4';
 
 export default function FoodCourse() {
+  const buttons = [
+    {
+      route:'/wine-type',
+      image:food1,
+      text:'Braai & Meat'
+    },
+    {
+      route:'/cheese-type',
+      image:food2,
+      text:'Cheese'
+    },
+    {
+      route:'/wine-type',
+      image:food3,
+      text:'Sea Food'
+    },
+    {
+      route:'/wine-type',
+      image:food4,
+      text:'Pasta'
+    },
+    {
+      route:'/wine-type',
+      image:food5,
+      text:'Spicy'
+    },
+    {
+      route:'/wine-type',
+      image:food6,
+      text:'Pizza'
+    }
+  ];
+
   return (
-    // <Wrapper image={pairingBg}>
-    <Wrapper video={video}>
+    <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
       <SectionTitle>{'Choose your main course'}</SectionTitle>
       <ButtonList>
-        <li>
-          <ImageButton href={'/wine-type'}>
-            <img src={food1} alt={'food choice'} />
-            <span>Braai & Meat</span>
-          </ImageButton>
-        </li>
-        <li>
-          <ImageButton href={'/wine-type'}>
-            <img src={food2} alt={'food choice'} />
-            <span>Cheese</span>
-          </ImageButton>
-        </li>
-        <li>
-          <ImageButton href={'/wine-type'}>
-            <img src={food3} alt={'food choice'} />
-            <span>Sea Food</span>
-          </ImageButton>
-        </li>
-        <li>
-          <ImageButton href={'/wine-type'}>
-            <img src={food4} alt={'food choice'} />
-            <span>Pasta</span>
-          </ImageButton>
-        </li>
-        <li>
-          <ImageButton href={'/wine-type'}>
-            <img src={food5} alt={'food choice'} />
-            <span>Spicy</span>
-          </ImageButton>
-        </li>
-        <li>
-          <ImageButton href={'/wine-type'}>
-            <img src={food6} alt={'food choice'} />
-            <span>Pizza</span>
-          </ImageButton>
-        </li>
+        {
+          buttons.map((button, index) => {
+            return (
+              <li key={index}>
+                <ImageButton
+                  route={button.route}
+                  image={button.image}
+                  text={button.text}
+                />
+              </li>
+            );
+          })
+        }
       </ButtonList>
       <Nav backRoute={'/main'} />
     </Wrapper>

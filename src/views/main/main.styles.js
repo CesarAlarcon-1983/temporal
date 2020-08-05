@@ -4,8 +4,10 @@ const mainColor = '#A50238';
 
 const TextContainer = styled.div`
   text-align: center;
-  margin-bottom: 50vw;
+  margin-bottom: 70vw;
   padding: 0 5vw;
+  position: relative;
+  top: 10vw;
 
   p {
     margin: 0;

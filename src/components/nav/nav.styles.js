@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NavContainer = styled.div`
   position: fixed;
   bottom: 5vw;
-  left:5vw;
+  left:7vw;
   display: flex;
   z-index: 10000;
   align-items: center;

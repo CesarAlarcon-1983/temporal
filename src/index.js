@@ -9,7 +9,7 @@ ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <Router>
-      <App></App>
+      <App />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

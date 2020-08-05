@@ -28,7 +28,7 @@ const Content = styled(motion.div)`
   z-index: 10;
   width: 100vw;
   height: 100vh;
-  padding: 5vw;
+  padding: 5vw 7vw;
 `;
 
 const Image = styled(motion.img)`
@@ -36,9 +36,10 @@ const Image = styled(motion.img)`
   top:0;
   bottom:0;
   height:100%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 1;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  left:0;
+  opacity: .8;
   z-index: 0;
 `;
 

@@ -5,11 +5,9 @@ import video from '../../assets/videos/intro.mp4';
 import { IntroContent } from './intro.styles';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { BrowserRouter as Router, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-const MotionWrapper = styled(motion.div)`
-
-`;
+const MotionWrapper = styled(motion.div)``;
 
 const wrapperTransitions = {
   hidden: { 
