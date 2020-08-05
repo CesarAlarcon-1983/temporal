@@ -28,9 +28,8 @@ const ImageButtonItem = styled.a`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    object-fit: fill;
     z-index: 1;
-    width:100%;
+    height:100%;
   }
 
   span {
