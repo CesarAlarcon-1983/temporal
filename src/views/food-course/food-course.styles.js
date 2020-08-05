@@ -27,7 +27,7 @@ const ButtonList = styled.ul`
 
 const SectionTitle = styled.h1`
   font-size: 7.5vw;
-  margin: 5vw 0 25vw;
+  margin: 5vw 0 20vw;
 `;
 
 export { ButtonList, SectionTitle };

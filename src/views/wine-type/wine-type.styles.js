@@ -48,9 +48,10 @@ const ButtonList = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
+  justify-content: space-between;
 
   li {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,8 +60,8 @@ const ButtonList = styled.ul`
 `;
 
 const SectionTitle = styled.h1`
-  font-size: 8vw;
-  margin: 0 0 10vw;
+  font-size: 7.5vw;
+  margin: 5vw 0 20vw;
 `;
 
 export { ImageButton, ButtonList, SectionTitle };
