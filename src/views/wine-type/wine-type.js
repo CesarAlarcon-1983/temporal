@@ -9,50 +9,64 @@ import white from '../../assets/images/white.jpg';
 import rose from '../../assets/images/rose.jpg';
 import sparkling from '../../assets/images/sparkling.jpg';
 import ImageButton from '../../components/imageButton/imageButton';
+import { motion } from 'framer-motion';
+import { wrapperTransitions, actionsContainerTransitions, buttonsTransitions } from './wine-type.transitions';
 
 export default function WineType() {
   const buttons = [
     {
       route:'/price-range',
       image:red,
-      text:'Red'
+      text:'Red',
+      direction: 'vertical'
     },
     {
       route:'/price-range',
       image:white,
-      text:'White'
+      text:'White',
+      direction: 'vertical'
     },
     {
       route:'/price-range',
       image:sparkling,
-      text:'Sparkling'
+      text:'Sparkling',
+      direction: 'vertical'
     },
     {
       route:'/price-range',
       image:rose,
-      text:'Rose'
+      text:'Rose',
+      direction: 'vertical'
     }
   ];
 
   return (
-    <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
-      <SectionTitle>{'Wine Type'}</SectionTitle>
-      <ButtonList>
-        {
-          buttons.map((button, index) => {
-            return (
-              <li key={index}>
-                <ImageButton
-                  route={button.route}
-                  image={button.image}
-                  text={button.text}
-                />
-              </li>
-            );
-          })
-        }
-      </ButtonList>
-      <Nav />
-    </Wrapper>
+    <motion.div
+      variants={wrapperTransitions}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
+      <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
+        <SectionTitle>{'Wine Type'}</SectionTitle>
+        <ButtonList>
+          {
+            buttons.map((button, index) => {
+              return (
+                <li key={index}>
+                  <ImageButton
+                    route={button.route}
+                    image={button.image}
+                    text={button.text}
+                    direction={button.direction}
+                  />
+                </li>
+              );
+            })
+          }
+        </ButtonList>
+        <Nav />
+      </Wrapper>
+    </motion.div>
   )
 }

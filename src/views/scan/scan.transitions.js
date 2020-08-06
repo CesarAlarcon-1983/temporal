@@ -12,7 +12,7 @@ const wrapperTransitions = {
       }
     },
     exit: { 
-      // opacity: 1,
+      // opacity: 0,
       x: '100vw',
       transition: {
         duration: 1,

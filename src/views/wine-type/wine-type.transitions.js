@@ -1,18 +1,15 @@
 const wrapperTransitions = {
     hidden: { 
-      // opacity: 0
       x: '-100vw',
     },
     show: {
       x: '0',
-      // opacity: 1,
       transition: {
         duration: 1,
         when: "beforeChildren",
       }
     },
     exit: { 
-      // opacity: 1,
       x: '100vw',
       transition: {
         duration: 1,
@@ -22,7 +19,7 @@ const wrapperTransitions = {
     }
   }
   
-  const childTransitions = {
+  const actionsContainerTransitions = {
     hidden: { 
       opacity: 0
     },
@@ -41,4 +38,4 @@ const wrapperTransitions = {
     }
   }
 
-export { wrapperTransitions, childTransitions };
+export { wrapperTransitions, actionsContainerTransitions };

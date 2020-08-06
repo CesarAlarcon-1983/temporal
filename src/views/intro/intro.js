@@ -10,7 +10,6 @@ import { wrapperTransitions, childTransitions } from './intro.transitions';
 
 const MotionWrapper = styled(motion.div)``;
 
-
 export default function Intro() {
   const url = useHistory();
 
