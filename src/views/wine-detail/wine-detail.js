@@ -22,13 +22,15 @@ import {
   BackButton,
   WineLocationInfo,
   WineCheeseInfo,
-  CheeseInfoImage
+  CheeseInfoImage,
+  SuggestedCheese
 } from './wine-detail.styles';
 import wineBottle from '../../assets/images/wine-bottle.png';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import cheeseSuggestion from '../../assets/images/brave.jpg';
 import regionMap from '../../assets/images/region-map.svg';
+import suggestedCheese from '../../assets/images/cheese3.png';
 import cheeseSuggestionIcon from '../../assets/images/icon-wine-cheese.svg';
 import video from '../../assets/videos/main.mp4';
 import ArrowBack from '@material-ui/icons/ArrowBack';
@@ -231,6 +233,10 @@ export default function WineDetail() {
         </Fragment>
       }
       <WineBottle src={wineBottle} />
+      {
+        isCheeseInfoVisible &&
+        <SuggestedCheese src={suggestedCheese} />
+      }      
       <Nav />
     </Fragment>
   )
