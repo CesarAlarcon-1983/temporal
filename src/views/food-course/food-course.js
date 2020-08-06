@@ -12,7 +12,7 @@ import Nav from '../../components/nav/nav';
 import ImageButton from '../../components/imageButton/imageButton';
 import video from '../../assets/videos/main.mp4';
 import { motion } from 'framer-motion';
-import { wrapperTransitions } from '../../components/utils/router.transition';
+import { wrapperTransitions, textTransitions } from './food-course.transitions';
 
 
 export default function FoodCourse() {
@@ -50,6 +50,27 @@ export default function FoodCourse() {
     }
   ];
 
+  const liAnimations = {
+    hidden:{
+      opacity: 0,
+      y: -100,
+    },
+    show:{
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+    exit:{
+      y:-100,
+      opacity: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+  }
+
   return (
     <motion.div
       variants={wrapperTransitions}
@@ -58,18 +79,20 @@ export default function FoodCourse() {
       exit="exit"
     >
       <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
-        <SectionTitle>{'Choose your main course'}</SectionTitle>
+        <SectionTitle key={'a'} variants={textTransitions}>{'Choose your main course'}</SectionTitle>
         <ButtonList>
           {
             buttons.map((button, index) => {
               return (
-                <li key={index}>
+                <motion.li
+                  variants={liAnimations}
+                  key={index}>
                   <ImageButton
                     route={button.route}
                     image={button.image}
                     text={button.text}
                   />
-                </li>
+                </motion.li>
               );
             })
           }

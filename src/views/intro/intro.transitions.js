@@ -5,7 +5,7 @@ const wrapperTransitions = {
   show: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: .5,
       delay: 1,
       ease: "easeInOut",
       when: "beforeChildren"
@@ -14,8 +14,9 @@ const wrapperTransitions = {
   exit: { 
     opacity: 0,
     transition: {
-      duration: 1,
+      duration: .5,
       ease: "easeInOut",
+      when: "afterChildren"
     },
   }
 }

@@ -12,7 +12,7 @@ import friends from '../../assets/images/friends.jpg';
 import yourself from '../../assets/images/yourself.jpg';
 import video from '../../assets/videos/main.mp4';
 import { motion } from 'framer-motion';
-import { wrapperTransitions } from '../../components/utils/router.transition';
+import { wrapperTransitions, textTransitions } from './ocations.transitions';
 
 export default function Ocations() {
 
@@ -49,6 +49,27 @@ export default function Ocations() {
     }
   ];
 
+  const liAnimations = {
+    hidden:{
+      opacity: 0,
+      y: -100,
+    },
+    show:{
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+    exit:{
+      y:-100,
+      opacity: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+  }
+
   return (
     <motion.div
       variants={wrapperTransitions}
@@ -62,13 +83,16 @@ export default function Ocations() {
         {
             buttons.map((button, index) => {
               return (
-                <li key={index}>
+                <motion.li 
+                  variants={liAnimations}
+                  key={index}
+                >
                   <ImageButton
                     route={button.route}
                     image={button.image}
                     text={button.text}
                   />
-                </li>
+                </motion.li>
               );
             })
           }

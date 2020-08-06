@@ -9,7 +9,7 @@ import medium from '../../assets/images/medium.jpg';
 import mild from '../../assets/images/mild.jpg';
 import brave from '../../assets/images/brave.jpg';
 import ImageButton from '../../components/imageButton/imageButton';
-import { wrapperTransitions } from '../../components/utils/router.transition';
+import { wrapperTransitions, textTransitions } from './cheese-type.transitions';
 import { motion } from 'framer-motion';
 
 export default function CheeseType() {
@@ -36,6 +36,27 @@ export default function CheeseType() {
     }
   ];
 
+  const liAnimations = {
+    hidden:{
+      opacity: 0,
+      y: -100,
+    },
+    show:{
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+    exit:{
+      y:-100,
+      opacity: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+  }
+
   return (
     <motion.div
       variants={wrapperTransitions}
@@ -44,18 +65,23 @@ export default function CheeseType() {
       exit="exit"
     >
       <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
-        <SectionTitle>{'Cheese pairing'}</SectionTitle>
+        <SectionTitle
+          // variants={textTransitions}
+        >{'Cheese pairing'}</SectionTitle>
         <ButtonList>
           {
             buttons.map((button, index) => {
               return (
-                <li key={index}>
+                <motion.li 
+                  variants={liAnimations}
+                  key={index}
+                >
                   <ImageButton
                     route={button.route}
                     image={button.image}
                     text={button.text}
                   />
-                </li>
+                </motion.li>
               );
             })
           }

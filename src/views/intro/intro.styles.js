@@ -23,13 +23,13 @@ const IntroContent = styled(motion.div)`
   }
 
   &:before{
-    animation: 1s 1s ${fadeInDown};
+    animation: 1s 1.5s ${fadeInDown};
     bottom: 120%;
   }
 
   &:after{
     top: 120%;
-    animation: 1s 1s ${fadeInUp};
+    animation: 1s 1.5s ${fadeInUp};
   }
 
   p {

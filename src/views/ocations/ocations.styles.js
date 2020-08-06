@@ -71,7 +71,7 @@ const ButtonList = styled.ul`
       }
     }
 
-    &:nth-child(1) {
+    /* &:nth-child(1) {
       opacity: 0;
       animation: ${fadeInButtons} 1s ease-out .5s forwards;
     }
@@ -99,13 +99,11 @@ const ButtonList = styled.ul`
     &:nth-child(6) {
       opacity: 0;
       animation: ${fadeInButtons} 1s ease-out 2s forwards;
-    }
+    } */
   }
 `;
 
 const SectionTitle = styled.h1`
-  opacity: 0;
-  animation: 1s .8s ${fadeInText} ease-out forwards;
   font-size: 8vw;
   margin: 0 0 10vw;
 `;

@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
 const scanAnimation = keyframes`
   0% {
@@ -40,10 +41,8 @@ const visualCue = keyframes`
 
 const mainColor = '#A50238';
 
-const Title = styled.h1`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+const Title = styled(motion.h1)`
+  position: relative;
   width: 100%;
   top: 10vw;
   color: ${mainColor};
@@ -51,7 +50,7 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const ScanIconWrapper = styled.div`
+const ScanIconWrapper = styled(motion.div)`
   position: absolute;
   top: 50%;
   left:50%;
@@ -87,7 +86,7 @@ const ScanIconWrapper = styled.div`
   }
 `;
 
-const ScanVisualCue = styled.div`
+const ScanVisualCue = styled(motion.div)`
   position: absolute;
   left:calc(50% - 4vw);
   top: 70%;

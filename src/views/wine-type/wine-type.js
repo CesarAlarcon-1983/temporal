@@ -10,7 +10,7 @@ import rose from '../../assets/images/rose.jpg';
 import sparkling from '../../assets/images/sparkling.jpg';
 import ImageButton from '../../components/imageButton/imageButton';
 import { motion } from 'framer-motion';
-import { wrapperTransitions } from '../../components/utils/router.transition';
+import { wrapperTransitions, textTransitions } from './wine-type.transitions';
 
 export default function WineType() {
   const buttons = [
@@ -40,6 +40,27 @@ export default function WineType() {
     }
   ];
 
+  const liAnimations = {
+    hidden:{
+      opacity: 0,
+      y: -100,
+    },
+    show:{
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+    exit:{
+      y:-100,
+      opacity: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+  }
+
   return (
     <motion.div
       variants={wrapperTransitions}
@@ -48,19 +69,24 @@ export default function WineType() {
       exit="exit"
     >
       <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
-        <SectionTitle>{'Wine Type'}</SectionTitle>
+        <SectionTitle 
+          variants={textTransitions}
+        >{'Wine Type'}</SectionTitle>
         <ButtonList>
           {
             buttons.map((button, index) => {
               return (
-                <li key={index}>
+                <motion.li 
+                  variants={liAnimations}
+                  key={index}
+                >
                   <ImageButton
                     route={button.route}
                     image={button.image}
                     text={button.text}
                     direction={button.direction}
                   />
-                </li>
+                </motion.li>
               );
             })
           }
