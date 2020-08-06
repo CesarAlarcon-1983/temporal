@@ -13,6 +13,7 @@ import ImageButton from '../../components/imageButton/imageButton';
 import video from '../../assets/videos/main.mp4';
 
 export default function FoodCourse() {
+
   const buttons = [
     {
       route:'/wine-type',

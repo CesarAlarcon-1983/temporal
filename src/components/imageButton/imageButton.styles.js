@@ -10,7 +10,7 @@ const ImageButtonItem = styled.a`
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 75%;
+  padding-bottom: 85%;
 
   &:after{
     content: '';
@@ -25,11 +25,11 @@ const ImageButtonItem = styled.a`
 
   img {
     opacity:1;
-    height: 100%;
     position: absolute;
-    top:0;
-    left:0;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
+    height:100%;
   }
 
   span {

@@ -2,41 +2,41 @@ import React from 'react';
 import Wrapper from '../../components/wrapper/wrapper';
 import pairingBg from '../../assets/images/pairing.jpg';
 import video from '../../assets/videos/main.mp4';
-import { ButtonList, SectionTitle } from './wine-type.styles';
+import { ButtonList, SectionTitle } from './cheese-type.styles';
 import Nav from '../../components/nav/nav';
-import red from '../../assets/images/red.jpg';
-import white from '../../assets/images/white.jpg';
-import rose from '../../assets/images/rose.jpg';
-import sparkling from '../../assets/images/sparkling.jpg';
+import strong from '../../assets/images/strong.jpg';
+import medium from '../../assets/images/medium.jpg';
+import mild from '../../assets/images/mild.jpg';
+import brave from '../../assets/images/brave.jpg';
 import ImageButton from '../../components/imageButton/imageButton';
 
-export default function WineType() {
+export default function CheeseType() {
   const buttons = [
     {
-      route:'/price-range',
-      image:red,
-      text:'Red'
+      route:'/wine-type',
+      image:strong,
+      text:'Strong'
     },
     {
-      route:'/price-range',
-      image:white,
-      text:'White'
+      route:'/wine-type',
+      image:medium,
+      text:'Medium'
     },
     {
-      route:'/price-range',
-      image:sparkling,
-      text:'Sparkling'
+      route:'/wine-type',
+      image:mild,
+      text:'Mild'
     },
     {
-      route:'/price-range',
-      image:rose,
-      text:'Rose'
+      route:'/wine-type',
+      image:brave,
+      text:'Brave'
     }
   ];
 
   return (
     <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
-      <SectionTitle>{'Wine Type'}</SectionTitle>
+      <SectionTitle>{'Cheese pairing'}</SectionTitle>
       <ButtonList>
         {
           buttons.map((button, index) => {

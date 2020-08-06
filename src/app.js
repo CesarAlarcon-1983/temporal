@@ -5,6 +5,7 @@ import Scan from './views/scan/scan';
 import Ocations from './views/ocations/ocations';
 import FoodCourse from './views/food-course/food-course';
 import WineType from './views/wine-type/wine-type';
+import CheeseType from './views/cheese-type/cheese-type';
 import PriceRange from './views/price-range/price-range';
 import WineDetail from './views/wine-detail/wine-detail';
 import { AnimatePresence } from 'framer-motion'
@@ -34,6 +35,9 @@ function App()  {
         </Route>
         <Route path="/wine-type">
           <WineType />
+        </Route>
+        <Route path="/cheese-type">
+          <CheeseType />
         </Route>
         <Route path="/wine-detail">
           <WineDetail />
