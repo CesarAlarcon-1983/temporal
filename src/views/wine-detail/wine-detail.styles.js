@@ -8,6 +8,7 @@ const BottomCurve = styled.img`
 `;
 
 const WineDetailInfo = styled.div`
+  padding-top: 5vw;
   padding-bottom: 70vw;
 `;
 
@@ -27,6 +28,10 @@ const WineCheeseInfo = styled.div`
   padding: 5vw;
   background: linear-gradient(to bottom, rgba(165,2,56,.7) 40%, transparent);
   text-align: center;
+
+  a {
+    margin-top: 5vw;
+  }
 `;
 
 const WineDetailName = styled.div`
@@ -296,6 +301,14 @@ const CheeseInfoImage = styled.div`
   }
 `;
 
+const SuggestedCheese = styled.img`
+  position: absolute;
+  bottom: 3vw;
+  right: 12vw;
+  width: 40vw;
+  z-index: 110;
+`;
+
 export {
   BottomCurve,
   WineDetailInfo,
@@ -315,5 +328,6 @@ export {
   BackButton,
   WineLocationInfo,
   WineCheeseInfo,
-  CheeseInfoImage
+  CheeseInfoImage,
+  SuggestedCheese
 };
