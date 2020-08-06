@@ -28,7 +28,8 @@ export default function PriceRange() {
     slidesToScroll: 1,
     arrows: true,
     nextArrow: <ArrowNext />,
-    prevArrow: <ArrowPrev />
+    prevArrow: <ArrowPrev />,
+    autoplay: false
   };
   const url = useHistory();
   

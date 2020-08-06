@@ -1,17 +1,18 @@
 import styled, { keyframes } from 'styled-components';
 import { fadeInLeftBig } from 'react-animations';
+import { fadeInLeft } from 'react-animations';
 import { fadeInDown } from 'react-animations';
 
 const fadeInSlides = keyframes`${fadeInLeftBig}`;
 const fadeInText = keyframes`${fadeInDown}`;
-
+const fadeInBottles = keyframes`${fadeInLeft}`;
 
 const SectionTitle = styled.h1`
   opacity: 0;
   animation: 1s .5s ${fadeInText} forwards;
   font-size: 7.5vw;
   line-height: 1.1;
-  margin: 0 0 4vw;
+  margin: 7vw 0 4vw;
 `;
 
 const SectionSubtitle = styled.p`
@@ -71,6 +72,8 @@ const WineElement = styled.a`
   padding-bottom: 100%;
   height: 0;
   display: block;
+  opacity: 0;
+  animation: .5s 1.3s ${fadeInBottles} forwards;
 
   &:before {
     content: '';

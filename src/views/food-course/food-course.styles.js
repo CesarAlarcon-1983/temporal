@@ -30,29 +30,29 @@ const ButtonList = styled.ul`
 
     &:nth-child(1) {
       opacity: 0;
-      animation: 1s 1.3s ${fadeInButtons} forwards;
+      animation: 1s 1.8s ${fadeInButtons} forwards;
     }
 
     &:nth-child(2) {
       opacity: 0;
-      animation: 1s 1.6s ${fadeInButtons} forwards;
+      animation: 1s 2.1s ${fadeInButtons} forwards;
     }
     &:nth-child(3) {
       opacity: 0;
-      animation: 1s 1.9s ${fadeInButtons} forwards;
+      animation: 1s 2.4s ${fadeInButtons} forwards;
     }
     &:nth-child(4) {
       opacity: 0;
-      animation: 1s 2.2s ${fadeInButtons} forwards;
+      animation: 1s 2.7s ${fadeInButtons} forwards;
     }
     &:nth-child(5) {
       opacity: 0;
-      animation: 1s 2.5s ${fadeInButtons} forwards;
+      animation: 1s 3s ${fadeInButtons} forwards;
     }
 
     &:nth-child(6) {
       opacity: 0;
-      animation: 1s 2.8s ${fadeInButtons} forwards;
+      animation: 1s 3.5s ${fadeInButtons} forwards;
     }
   }
 `;

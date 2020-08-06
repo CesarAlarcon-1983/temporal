@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+import { fadeInUp } from 'react-animations';
+import { fadeInDown } from 'react-animations';
+
+const fadeInButtons = keyframes`${fadeInUp}`;
+const fadeInText = keyframes`${fadeInDown}`;
 
 const ImageButton = styled.a`
   display: block;
@@ -10,7 +15,7 @@ const ImageButton = styled.a`
   height: 0;
   padding-bottom: 50%;
 
-  &:after{
+  &:after {
     content: '';
     position: absolute;
     top:0 ;
@@ -41,7 +46,6 @@ const ImageButton = styled.a`
   }
 `;
 
-
 const ButtonList = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -56,12 +60,34 @@ const ButtonList = styled.ul`
     justify-content: center;
     align-items: center;
     margin-bottom: 10vw;
+
+    &:nth-child(1) {
+      opacity: 0;
+      animation: ${fadeInButtons} 1s ease-out 1s forwards;
+    }
+    
+    &:nth-child(2) {
+      opacity: 0;
+      animation: ${fadeInButtons} 1s ease-out 1.3s forwards;
+    }
+    
+    &:nth-child(3) {
+      opacity: 0;
+      animation: ${fadeInButtons} 1s ease-out 1.6s forwards;
+    }
+    
+    &:nth-child(4) {
+      opacity: 0;
+      animation: ${fadeInButtons} 1s ease-out 1.9s forwards;
+    }
   }
 `;
 
 const SectionTitle = styled.h1`
+  opacity: 0;
   font-size: 7.5vw;
   margin: 5vw 0 20vw;
+  animation: 1s .8s ${fadeInText} ease-out forwards;
 `;
 
 export { ImageButton, ButtonList, SectionTitle };

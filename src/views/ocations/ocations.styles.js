@@ -73,32 +73,32 @@ const ButtonList = styled.ul`
 
     &:nth-child(1) {
       opacity: 0;
-      animation: ${fadeInButtons} 1s ease-out .5s forwards;
+      animation: ${fadeInButtons} 1s ease-out 1s forwards;
     }
     
     &:nth-child(2) {
       opacity: 0;
-      animation: ${fadeInButtons} 1s ease-out .8s forwards;
+      animation: ${fadeInButtons} 1s ease-out 1.3s forwards;
     }
     
     &:nth-child(3) {
       opacity: 0;
-      animation: ${fadeInButtons} 1s ease-out 1.1s forwards;
+      animation: ${fadeInButtons} 1s ease-out 1.6s forwards;
     }
     
     &:nth-child(4) {
       opacity: 0;
-      animation: ${fadeInButtons} 1s ease-out 1.4s forwards;
+      animation: ${fadeInButtons} 1s ease-out 1.9s forwards;
     }
 
     &:nth-child(5) {
       opacity: 0;
-      animation: ${fadeInButtons} 1s ease-out 1.7s forwards;
+      animation: ${fadeInButtons} 1s ease-out 2.2s forwards;
     }
 
     &:nth-child(6) {
       opacity: 0;
-      animation: ${fadeInButtons} 1s ease-out 2s forwards;
+      animation: ${fadeInButtons} 1s ease-out 2.5s forwards;
     }
   }
 `;
