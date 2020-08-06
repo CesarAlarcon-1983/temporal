@@ -4,7 +4,7 @@ import video from '../../assets/videos/main2.mp4';
 import Button from '../../components/button/button';
 import { wrapperTransitions, actionsContainerTransitions, buttonsTransitions } from './main.transitions';
 import styled from 'styled-components';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useHistory } from 'react-router-dom';
 import {
   TextContainer,

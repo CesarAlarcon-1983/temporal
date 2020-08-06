@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ImageButtonItem = styled.a`
   display: flex;
@@ -11,6 +11,7 @@ const ImageButtonItem = styled.a`
   width: 100%;
   height: 0;
   padding-bottom: 85%;
+
 
   &:after{
     content: '';
@@ -32,6 +33,16 @@ const ImageButtonItem = styled.a`
     height:100%;
   }
 
+  ${props => {
+    if(props?.direction === 'vertical') {
+      return css`
+        img {
+          width: 100%;
+        }
+      `;
+    }
+  }}
+  
   span {
     position: absolute;
     font-family: 'DM Serif Display', serif;
