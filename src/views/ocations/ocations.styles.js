@@ -73,36 +73,39 @@ const ButtonList = styled.ul`
 
     &:nth-child(1) {
       opacity: 0;
-      animation: 1s 1.3s ${fadeInButtons} forwards;
+      animation: ${fadeInButtons} 1s ease-out .5s forwards;
     }
-
+    
     &:nth-child(2) {
       opacity: 0;
-      animation: 1s 1.6s ${fadeInButtons} forwards;
+      animation: ${fadeInButtons} 1s ease-out .8s forwards;
     }
+    
     &:nth-child(3) {
       opacity: 0;
-      animation: 1s 1.9s ${fadeInButtons} forwards;
+      animation: ${fadeInButtons} 1s ease-out 1.1s forwards;
     }
+    
     &:nth-child(4) {
       opacity: 0;
-      animation: 1s 2.2s ${fadeInButtons} forwards;
+      animation: ${fadeInButtons} 1s ease-out 1.4s forwards;
     }
+
     &:nth-child(5) {
       opacity: 0;
-      animation: 1s 2.5s ${fadeInButtons} forwards;
+      animation: ${fadeInButtons} 1s ease-out 1.7s forwards;
     }
 
     &:nth-child(6) {
       opacity: 0;
-      animation: 1s 2.8s ${fadeInButtons} forwards;
+      animation: ${fadeInButtons} 1s ease-out 2s forwards;
     }
   }
 `;
 
 const SectionTitle = styled.h1`
   opacity: 0;
-  animation: 1s 1.1s ${fadeInText} forwards;
+  animation: 1s .8s ${fadeInText} ease-out forwards;
   font-size: 8vw;
   margin: 0 0 10vw;
 `;

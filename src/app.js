@@ -19,7 +19,7 @@ function App()  {
   const location = useLocation();
 
   return(
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence>
       <Switch location={location} key={location.key}>
         <Route exact path="/">
           <Intro />

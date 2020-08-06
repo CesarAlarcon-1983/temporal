@@ -1,12 +1,22 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { fadeInLeftBig } from 'react-animations';
+import { fadeInDown } from 'react-animations';
+
+const fadeInSlides = keyframes`${fadeInLeftBig}`;
+const fadeInText = keyframes`${fadeInDown}`;
+
 
 const SectionTitle = styled.h1`
+  opacity: 0;
+  animation: 1s .5s ${fadeInText} forwards;
   font-size: 7.5vw;
   line-height: 1.1;
   margin: 0 0 4vw;
 `;
 
 const SectionSubtitle = styled.p`
+  opacity: 0;
+  animation: 1s .8s ${fadeInText} forwards;
   font-size: 3.5vw;
   margin: 0 0 7vw;
   font-weight: 500;
@@ -14,6 +24,19 @@ const SectionSubtitle = styled.p`
 
 const WineSlider = styled.div`
   margin-bottom: 5vw;
+
+  &:nth-of-type(1) {
+      opacity: 0;
+      animation: 1s .5s ${fadeInSlides} forwards;
+  }
+  &:nth-of-type(2) {
+      opacity: 0;
+      animation: 1s .8s ${fadeInSlides} forwards;
+  }
+  &:nth-of-type(3) {
+      opacity: 0;
+      animation: 1s 1.1s ${fadeInSlides} forwards;
+  }
 `;
 
 const WineSliderHeading = styled.div`

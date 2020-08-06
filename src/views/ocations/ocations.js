@@ -12,7 +12,7 @@ import friends from '../../assets/images/friends.jpg';
 import yourself from '../../assets/images/yourself.jpg';
 import video from '../../assets/videos/main.mp4';
 import { motion } from 'framer-motion';
-import { wrapperTransitions, actionsContainerTransitions, buttonsTransitions } from './ocations.transitions';
+import { wrapperTransitions } from '../../components/utils/router.transition';
 
 export default function Ocations() {
 
@@ -56,7 +56,7 @@ export default function Ocations() {
       animate="show"
       exit="exit"
     >
-      <Wrapper video={video}>
+      <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
         <SectionTitle>{'Occasions'}</SectionTitle>
         <ButtonList>
         {

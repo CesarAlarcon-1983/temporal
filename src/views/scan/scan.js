@@ -8,7 +8,7 @@ import { Title, ScanIconWrapper, ScanVisualCue } from './scan.styles';
 import pairingBg from '../../assets/images/pairing.jpg';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { wrapperTransitions, childTransitions } from './scan.transitions';
+import { wrapperTransitions } from '../../components/utils/router.transition';
 
 const MotionWrapper = styled(motion.div)``;
 

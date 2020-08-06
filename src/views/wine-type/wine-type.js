@@ -10,7 +10,7 @@ import rose from '../../assets/images/rose.jpg';
 import sparkling from '../../assets/images/sparkling.jpg';
 import ImageButton from '../../components/imageButton/imageButton';
 import { motion } from 'framer-motion';
-import { wrapperTransitions, actionsContainerTransitions, buttonsTransitions } from './wine-type.transitions';
+import { wrapperTransitions } from '../../components/utils/router.transition';
 
 export default function WineType() {
   const buttons = [

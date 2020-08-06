@@ -12,7 +12,7 @@ import Nav from '../../components/nav/nav';
 import ImageButton from '../../components/imageButton/imageButton';
 import video from '../../assets/videos/main.mp4';
 import { motion } from 'framer-motion';
-import { wrapperTransitions, actionsContainerTransitions, buttonsTransitions } from './food-course.transitions';
+import { wrapperTransitions } from '../../components/utils/router.transition';
 
 
 export default function FoodCourse() {

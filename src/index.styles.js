@@ -8,7 +8,6 @@ export default createGlobalStyle`
     padding: 0;
     margin: 0;
     color: #fff;
-    background: #000;
   }
 
   h1,h2,h3,h4,h5,h6 {
