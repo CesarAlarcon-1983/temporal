@@ -6,6 +6,7 @@ const BottomCurve = styled.img`
   width: 100%;
   z-index: 100;
 `;
+
 const WineDetailInfo = styled.div`
 padding-bottom: 70vw;
 `;
@@ -13,7 +14,6 @@ padding-bottom: 70vw;
 const WineDetailName = styled.div`
   margin-bottom: 3vw;
   
-
   span {
     display: block;
     margin: 0 0 2vw;
@@ -125,6 +125,35 @@ const WineBottle = styled.img`
   z-index: 100;
 `;
 
+const WineGraphInfo = styled.a`
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  border: .3vw solid #fff;
+  background: rgba(165,2,56,1);
+  position: absolute;
+  right: 5%;
+  top:5%;
+  display:  block;
+
+  &:after,
+  &:before {
+    content: '';
+    width: 1vw;
+    height: .3vw;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate3d(-50%, -50%, 0) rotate(0);
+    display:  block;
+    background: #fff;
+  }
+
+  &:after {
+    transform: translate3d(-50%, -50%, 0) rotate(90deg);
+  }
+`;
+
 export {
   BottomCurve,
   WineDetailInfo,
@@ -137,5 +166,6 @@ export {
   WineLocation,
   WineDesc,
   WineGraphGroup,
-  WineBottle
+  WineBottle,
+  WineGraphInfo
 };

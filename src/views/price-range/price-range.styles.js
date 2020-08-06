@@ -44,8 +44,8 @@ const WineSliderTrack = styled.div`
 
 const WineElement = styled.a`
   position: relative;
-  width: 28%;
-  padding-bottom: 28%;
+  width: 100%;
+  padding-bottom: 100%;
   height: 0;
   display: block;
 
@@ -70,6 +70,49 @@ const WineElement = styled.a`
   }
 `;
 
+const ArrowPrev = styled.div`
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background: transparent;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: '';
+    width: 2vw;
+    height: 2vw;
+    border-top: 0.5vw solid #fff;
+    border-left: 0.5vw solid #fff;
+    transform: rotate(-45deg);
+    display: block;
+  }
+`;
+
+const ArrowNext = styled.div`
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background: transparent;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: '';
+    width: 2vw;
+    height: 2vw;
+    border-top: 0.5vw solid #fff;
+    border-left: 0.5vw solid #fff;
+    transform: rotate(135deg);
+    background: none;
+    display: block;
+  }
+`;
+
 export {
   SectionTitle,
   SectionSubtitle,
@@ -78,5 +121,7 @@ export {
   Label,
   Line,
   WineSliderTrack,
-  WineElement
+  WineElement,
+  ArrowNext,
+  ArrowPrev
 };
