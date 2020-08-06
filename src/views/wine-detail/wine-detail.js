@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import Wrapper from '../../components/wrapper/wrapper';
-import pairingBg from '../../assets/images/pairing.jpg';
 import bottomCurve from '../../assets/images/wine-detail-bottom.svg';
-import winelocation from '../../assets/images/location.svg';
+import winelocation from '../../assets/images/location.png';
 import Nav from '../../components/nav/nav';
 import {
   BottomCurve,
@@ -11,17 +10,28 @@ import {
   WineFeatures,
   WineGraph,
   WineGraphLabel,
-  WineGraphCircle,
-  WineGraphInfo,
+  WineGrape,
+  WineGraphInfoBtn,
   WineGraphName,
   WineLocation,
   WineDesc,
   WineGraphGroup,
-  WineBottle
+  WineBottle,
+  CheeseSuggestion,
+  WineGraphinfo,
+  BackButton,
+  WineLocationInfo,
+  WineCheeseInfo,
+  CheeseInfoImage
 } from './wine-detail.styles';
 import wineBottle from '../../assets/images/wine-bottle.png';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import cheeseSuggestion from '../../assets/images/brave.jpg';
+import regionMap from '../../assets/images/region-map.svg';
+import cheeseSuggestionIcon from '../../assets/images/icon-wine-cheese.svg';
+import video from '../../assets/videos/main.mp4';
+import ArrowBack from '@material-ui/icons/ArrowBack';
 
 const useStylesFacebook = makeStyles((theme) => ({
   root: {
@@ -50,18 +60,17 @@ function FacebookCircularProgress(props) {
       <CircularProgress
         variant="determinate"
         className={classes.bottom}
-        size={'100%'}
+        size={'10.3rem'}
         thickness={6}
         value={100}
       />
       <CircularProgress
         variant="static"
-        disableShrink
         className={classes.top}
         classes={{
           circle: classes.circle,
         }}
-        size={'100%'}
+        size={'10.3rem'}
         thickness={6}
         {...props}
       />
@@ -72,7 +81,13 @@ function FacebookCircularProgress(props) {
 export default function WineDetail() {
   const [progressOne, setProgressOne] = React.useState(0);
   const [progressTwo, setProgressTwo] = React.useState(0);
-  const classes = useStylesFacebook();
+  const [isWineInfovisible, setIsWineInfovisible] = React.useState(false);
+  const [isLocationInfoVisible, setIsLocationInfovisible] = React.useState(false);
+  const [isCheeseInfoVisible, setisCheeseInfoVisible] = React.useState(false);
+  const [wineInfo, setWineInfo] = React.useState({
+    title: '',
+    text: ''
+  });
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -87,44 +102,134 @@ export default function WineDetail() {
   
   return (
     <Fragment>
-      <Wrapper image={pairingBg}>
-        <WineDetailInfo>
-          <WineDetailName>
-            <span>Our Selection</span>
-            <h1>Beyerskloof</h1>
-            <span>Pinotage, Stellenbosch</span>
-          </WineDetailName>
-          <WineFeatures>
-            <li>Deep red wine</li>
-            <li>100% Pinotage</li>
-          </WineFeatures>
-          <WineDesc>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, consequat. Azzril delenit augue duis dolore te feugait nulla facilisi.
-          </WineDesc>
-          <WineGraphGroup>            
-            <WineGraph>
-              <WineGraphLabel>{'Medium'}</WineGraphLabel>
-              <FacebookCircularProgress value={progressOne} />
-              <WineGraphName>{'TANNIN'}</WineGraphName>
-              <WineGraphInfo />
-            </WineGraph>
-            <WineGraph>
-              <WineGraphLabel>{'Medium'}</WineGraphLabel>
-              <FacebookCircularProgress value={progressTwo} />
-              <WineGraphName>{'BODY'}</WineGraphName>
-              <WineGraphInfo />
-            </WineGraph>
-            <WineGraph>
-              <WineGraphLabel>{'Medium'}</WineGraphLabel>
-              <FacebookCircularProgress value={progressOne} />
-              <WineGraphName>{'DRINKING'}</WineGraphName>
-              <WineGraphInfo />
-            </WineGraph>
-          </WineGraphGroup>
-          <WineLocation src={winelocation} alt={'Wine location'} />
-        </WineDetailInfo>
+      <Wrapper video={video} overlay overlayGradient={'bottom'} overlayColor={'rgba(0,0,0,.7)'}>
+        { 
+          !isLocationInfoVisible && !isCheeseInfoVisible &&
+          <WineDetailInfo>
+            <WineDetailName>
+              <span>Our Selection</span>
+              <h1>Beyerskloof</h1>
+              <span>Pinotage, Stellenbosch</span>
+            </WineDetailName>
+            <WineFeatures>
+              <li>Deep red wine</li>
+              <li>100% Pinotage</li>
+            </WineFeatures>
+            <WineGrape>
+              <strong>{'Pinotage'}</strong>
+              {'Red fruit and chocolate nose with hints of mocha and cedar.'}
+            </WineGrape>
+            <WineDesc>
+            The Beyerskloof Pinotage boast with being South Africa's most popular Pinotage and it's no wonder. This wine has shown a fruity and enjoyable consistency year after year. Classic Pinotage. A wine made to enjoy and drink on any occasion. 
+            </WineDesc>
+            <WineGraphGroup>            
+              <WineGraph>
+                <WineGraphLabel>{'Medium'}</WineGraphLabel>
+                <FacebookCircularProgress value={progressOne} />
+                <WineGraphName>{'TANNIN'}</WineGraphName>
+                <WineGraphInfoBtn onClick={() => {
+                  setIsWineInfovisible(true);
+                  setWineInfo({
+                    title: 'TANNIN',
+                    text: 'Tannins are substances found mainly in plants, bark, and leaves that create a drying, rubbing sensation on your tongue.'
+                  })
+                }} />
+              </WineGraph>
+              <WineGraph>
+                <WineGraphLabel>{'Medium Low'}</WineGraphLabel>
+                <FacebookCircularProgress value={progressTwo} />
+                <WineGraphName>{'BODY'}</WineGraphName>
+                <WineGraphInfoBtn onClick={() => {
+                  setIsWineInfovisible(true);
+                  setWineInfo({
+                    title: 'BODY',
+                    text: 'Body describes the texture or weight of a wine in the mouth. This comes from a combination of elements, including alcohol, extract, glycerol, and acid.'
+                  })
+                }} />
+              </WineGraph>
+              <WineGraph>
+                <WineGraphLabel>{'Easy'}</WineGraphLabel>
+                <FacebookCircularProgress value={progressOne} />
+                <WineGraphName>{'DRINKING'}</WineGraphName>
+                <WineGraphInfoBtn onClick={() => {
+                  setIsWineInfovisible(true);
+                  setWineInfo({
+                    title: 'DRINKING',
+                    text: 'A wine is easy to drink if it\'s balanced and the elements have evolved into harmony. It can be a wine with complexity or not. On the other hand Heavy wines are  those with too much sense of body.'
+                  })
+                }} />
+              </WineGraph>
+              { isWineInfovisible &&
+                <WineGraphinfo>
+                  <strong>{wineInfo.title}</strong>
+                  <p>{wineInfo.text}</p>
+                </WineGraphinfo>
+              }
+            </WineGraphGroup>
+          </WineDetailInfo>
+        }
+        {
+          isLocationInfoVisible && !isCheeseInfoVisible &&
+          <WineLocationInfo>
+            <img src={regionMap} alt={'region'} />
+            <WineDetailName>
+              <h1>{'Stellenbosch'}</h1>
+            </WineDetailName>
+            <WineDesc>
+              The region has a Mediterranean climate with hot dry summers and cool wet winters. Stellenbosch lies at the foot of the Cape Fold Mountain range, which provides favourable soils for viticulture - ranging from light, sandy soils to decomposed granite, creating several different sub-regions.
+            </WineDesc>
+            <BackButton onClick={() => {
+              setIsLocationInfovisible(false);
+            }}>
+              <ArrowBack />
+              <span>Back</span>
+            </BackButton>
+          </WineLocationInfo>
+        }
+        {
+          !isLocationInfoVisible && isCheeseInfoVisible &&
+          <WineCheeseInfo>
+            <CheeseInfoImage>
+              <img src={cheeseSuggestion} alt={'Cheese Suggestion'} />
+            </CheeseInfoImage>
+            <span>{'Cheese Suggestion'}</span>
+            <WineDetailName>
+              <h1>{'Stellenbosch'}</h1>
+              <span>Pinotage, Stellenbosch</span>
+            </WineDetailName>
+            <WineDetailName>
+              <h1>{'&'}</h1>
+              <h1>{'Hard cheese'}</h1>
+              <span>Wijngaard Affine</span>
+            </WineDetailName>
+            <BackButton onClick={() => {
+              setisCheeseInfoVisible(false);
+            }}>
+              <ArrowBack />
+              <span>Back</span>
+            </BackButton>
+          </WineCheeseInfo>
+        }
+        {!isCheeseInfoVisible && 
+          <WineLocation src={winelocation} alt={'Wine location'} onClick={() => {
+            setIsLocationInfovisible(true);
+            setisCheeseInfoVisible(false);
+          }} />
+        }
       </Wrapper>
-      <BottomCurve src={bottomCurve} />
+      {!isCheeseInfoVisible && 
+        <Fragment>
+          <CheeseSuggestion onClick={() => {
+              setIsLocationInfovisible(false);
+              setisCheeseInfoVisible(true);
+          }}>
+            <img src={cheeseSuggestion} alt={'Cheese Suggestion'} />
+            <span>{'Cheese Suggestion'}</span>
+            <img src={cheeseSuggestionIcon} alt={'Cheese Suggestion Icon'} />
+          </CheeseSuggestion>
+          <BottomCurve src={bottomCurve} />
+        </Fragment>
+      }
       <WineBottle src={wineBottle} />
       <Nav />
     </Fragment>
