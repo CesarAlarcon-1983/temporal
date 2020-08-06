@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Wrapper from '../../components/wrapper/wrapper';
 import video from '../../assets/videos/main2.mp4';
 import Button from '../../components/button/button';
@@ -16,16 +16,6 @@ const MotionWrapper = styled(motion.div)``;
 export default function Main() {
 
   const url = useHistory();
-  const controls = useAnimation()
-
-  useEffect(() => {
-    controls.start(i => ({
-      opacity: 0,
-      x: 100,
-      transition: { delay: (i * 0.3) + 1 },
-    }))
-  }, [])
-
 
   return (
     <MotionWrapper
