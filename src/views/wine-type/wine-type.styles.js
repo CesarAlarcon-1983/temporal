@@ -62,7 +62,7 @@ const ButtonList = styled.ul`
     align-items: center;
     margin-bottom: 10vw;
 
-    &:nth-child(1) {
+    /* &:nth-child(1) {
       opacity: 0;
       animation: 1s 1.3s ${fadeInButtons} forwards;
     }
@@ -78,13 +78,11 @@ const ButtonList = styled.ul`
     &:nth-child(4) {
       opacity: 0;
       animation: 1s 2.2s ${fadeInButtons} forwards;
-    }
+    } */
   }
 `;
 
 const SectionTitle = styled.h1`
-  opacity: 0;
-  animation: 1s 1.1s ${fadeInText} forwards;
   font-size: 7.5vw;
   margin: 5vw 0 20vw;
 `;

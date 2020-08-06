@@ -2,13 +2,15 @@ import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { fadeInUp } from 'react-animations';
 import { fadeInDown } from 'react-animations';
+import { fadeOutDown } from 'react-animations';
 
 const fadeInButtons = keyframes`${fadeInUp}`;
+const fadeOutButtons = keyframes`${fadeOutDown}`;
 const fadeInText = keyframes`${fadeInDown}`;
 
 const mainColor = '#A50238';
 
-const TextContainer = styled.div`
+const TextContainer = styled(motion.div)`
   text-align: center;
   margin-bottom: 80vw;
   padding: 0 5vw;
@@ -21,7 +23,7 @@ const TextContainer = styled.div`
     font-size: 4vw;
     color: #212121;
     opacity: 0;
-    animation: 1s 1s ${fadeInText} forwards;
+    animation: 1s 1.5s ${fadeInText} forwards;
   }
 
   h1 {
@@ -44,9 +46,11 @@ const ActionsContainer = styled(motion.div)`
     &:nth-child(1) {
       animation: 1s 2s ${fadeInButtons} forwards;
     }
+
     &:nth-child(2) {
       animation: 1s 1.5s ${fadeInButtons} forwards;
     }
+
     &:nth-child(3) {
       animation: 1s 1s ${fadeInButtons} forwards;
     }

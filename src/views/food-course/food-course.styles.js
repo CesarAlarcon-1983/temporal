@@ -28,7 +28,7 @@ const ButtonList = styled.ul`
       }
     }
 
-    &:nth-child(1) {
+    /* &:nth-child(1) {
       opacity: 0;
       animation: 1s 1.8s ${fadeInButtons} forwards;
     }
@@ -52,14 +52,12 @@ const ButtonList = styled.ul`
 
     &:nth-child(6) {
       opacity: 0;
-      animation: 1s 3.5s ${fadeInButtons} forwards;
-    }
+      animation: 1s 2.8s ${fadeInButtons} forwards;
+    } */
   }
 `;
 
 const SectionTitle = styled.h1`
-  opacity: 0;
-  animation: 1s 1.1s ${fadeInText} forwards;
   font-size: 7.5vw;
   margin: 5vw 0 20vw;
 `;
