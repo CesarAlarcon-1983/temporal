@@ -1,19 +1,21 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const BottomCurve = styled.img`
+const BottomCurve = styled(motion.img)`
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 100;
 `;
 
-const WineDetailInfo = styled.div`
+const WineDetailInfo = styled(motion.div)`
   padding-top: 5vw;
-  padding-bottom: 70vw;
+  /* padding-bottom: 70vw; */
+  transform: none !important;
+  transform-origin: center !important;
 `;
 
-const WineLocationInfo = styled.div`
+const WineLocationInfo = styled(motion.div)`
   width: 50vw;
   padding: 5vw;
   background: linear-gradient(to bottom, rgba(165,2,56,.7) 40%, transparent);
@@ -23,8 +25,7 @@ const WineLocationInfo = styled.div`
   }
 `;
 
-
-const WineCheeseInfo = styled.div`
+const WineCheeseInfo = styled(motion.div)`
   width: 50vw;
   padding: 5vw;
   background: linear-gradient(to bottom, rgba(165,2,56,.7) 40%, transparent);
@@ -35,7 +36,7 @@ const WineCheeseInfo = styled.div`
   }
 `;
 
-const WineDetailName = styled.div`
+const WineDetailName = styled(motion.div)`
   margin-bottom: 3vw;
   
   span {
@@ -59,7 +60,7 @@ const WineDetailName = styled.div`
   }
 `;
 
-const WineFeatures = styled.ul`
+const WineFeatures = styled(motion.ul)`
   display: flex;
   list-style: none;
   padding: 0;
@@ -76,7 +77,7 @@ const WineFeatures = styled.ul`
   }
 `;
 
-const WineGrape = styled.p`
+const WineGrape = styled(motion.p)`
   padding: 1.5vw;
   border-radius: 1vw;
   font-size: 2.5vw;
@@ -90,14 +91,14 @@ const WineGrape = styled.p`
   }
 `;
 
-const WineGraph = styled.div`
+const WineGraph = styled(motion.div)`
   display: block;
   width: 18%;
   position: relative;
   margin-right: 3vw;
 `;
 
-const WineGraphLabel = styled.span`
+const WineGraphLabel = styled(motion.span)`
   position: absolute;
   left: 50%;
   top: 7.5vw;
@@ -108,7 +109,7 @@ const WineGraphLabel = styled.span`
   line-height: 1;
 `;
 
-const WineGraphCircle = styled.div`
+const WineGraphCircle = styled(motion.div)`
   width: 100%;
   padding-bottom:100%;
   position: relative;
@@ -133,32 +134,32 @@ const WineGraphCircle = styled.div`
   }
 `;
 
-const WineGraphName = styled.div`
+const WineGraphName = styled(motion.div)`
   font-size: 2vw;
   width: 100%;
   text-align: center;
   display: block;
 `;
 
-const WineLocation = styled.img`
+const WineLocation = styled(motion.img)`
   position: absolute;
   right:-5vw;
   top:20vw;
   width: 45%;
 `;
 
-const WineDesc = styled.p`
+const WineDesc = styled(motion.p)`
   font-size: 2.5vw;
   max-width: 50vw;
   margin-bottom: 4vw;
   width: 100%;
 `;
 
-const WineGraphGroup = styled.div`
+const WineGraphGroup = styled(motion.div)`
   display: flex;
 `;
 
-const WineBottle = styled.img`
+const WineBottle = styled(motion.img)`
   position: absolute;
   bottom: 10vw;
   right: 10vw;
@@ -166,7 +167,7 @@ const WineBottle = styled.img`
   z-index: 100;
 `;
 
-const WineGraphInfoBtn = styled.a`
+const WineGraphInfoBtn = styled(motion.a)`
   width: 2.5vw;
   height: 2.5vw;
   border-radius: 50%;
@@ -195,7 +196,7 @@ const WineGraphInfoBtn = styled.a`
   }
 `;
 
-const CheeseSuggestion = styled.div`
+const CheeseSuggestion = styled(motion.div)`
   width: 35vw;
   height: 35vw;
   position: absolute;
@@ -208,6 +209,7 @@ const CheeseSuggestion = styled.div`
   justify-content: center;
   align-items: center;
   background: #000;
+  z-index: 1000;
 
   span {
     font-family: 'DM Serif Display', serif;
@@ -278,7 +280,7 @@ const BackButton = styled.a`
   }
 `;
 
-const CheeseInfoImage = styled.div`
+const CheeseInfoImage = styled(motion.div)`
   width: 35vw;
   height: 35vw;
   border-radius: 50%;
@@ -304,7 +306,7 @@ const CheeseInfoImage = styled.div`
   }
 `;
 
-const SuggestedCheese = styled.img`
+const SuggestedCheese = styled(motion.img)`
   position: absolute;
   bottom: 3vw;
   right: 12vw;
