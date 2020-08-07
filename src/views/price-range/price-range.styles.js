@@ -2,42 +2,44 @@ import styled, { keyframes } from 'styled-components';
 import { fadeInLeftBig } from 'react-animations';
 import { fadeInLeft } from 'react-animations';
 import { fadeInDown } from 'react-animations';
+import { motion } from 'framer-motion';
 
 const fadeInSlides = keyframes`${fadeInLeftBig}`;
 const fadeInText = keyframes`${fadeInDown}`;
 const fadeInBottles = keyframes`${fadeInLeft}`;
 
 const SectionTitle = styled.h1`
-  opacity: 0;
-  animation: 1s .5s ${fadeInText} forwards;
+  /* opacity: 0;
+  animation: 1s .5s ${fadeInText} forwards; */
   font-size: 7.5vw;
   line-height: 1.1;
   margin: 7vw 0 4vw;
 `;
 
 const SectionSubtitle = styled.p`
-  opacity: 0;
-  animation: 1s .8s ${fadeInText} forwards;
+  /* opacity: 0;
+  animation: 1s .8s ${fadeInText} forwards; */
   font-size: 3.5vw;
   margin: 0 0 7vw;
   font-weight: 500;
 `;
 
-const WineSlider = styled.div`
+const WineSlider = styled(motion.div)`
   margin-bottom: 5vw;
+  position: relative;
 
-  &:nth-of-type(1) {
+  /* &:nth-of-type(1) {
       opacity: 0;
-      animation: 1s .5s ${fadeInSlides} forwards;
+      animation: 1s 2.5s ${fadeInSlides} forwards;
   }
   &:nth-of-type(2) {
       opacity: 0;
-      animation: 1s .8s ${fadeInSlides} forwards;
+      animation: 1s 2.8s ${fadeInSlides} forwards;
   }
   &:nth-of-type(3) {
       opacity: 0;
-      animation: 1s 1.1s ${fadeInSlides} forwards;
-  }
+      animation: 1s 3.1s ${fadeInSlides} forwards;
+  } */
 `;
 
 const WineSliderHeading = styled.div`

@@ -17,7 +17,7 @@ import Nav from '../../components/nav/nav';
 import Slider from "react-slick";
 import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { wrapperTransitions } from '../../components/utils/router.transition';
+import { wrapperTransitions, sliderTransitions } from './price-range.transitions';
 
 export default function PriceRange() {
   const sliderSettings = {
@@ -33,6 +33,27 @@ export default function PriceRange() {
   };
   const url = useHistory();
   
+  const liAnimations = {
+    hidden:{
+      opacity: 0,
+      x: '100vw',
+    },
+    show:{
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+    exit:{
+      x:'100vw',
+      opacity: 0,
+      transition: {
+        duration: 1,
+      }
+    },
+  }
+
   return (
     <motion.div
       variants={wrapperTransitions}
@@ -40,16 +61,15 @@ export default function PriceRange() {
       animate="show"
       exit="exit"
     >
-
       <Wrapper image={pairingBg} overlay overlayGradient={'top'} overlayColor={'rgba(0,0,0,1)'}>
         <SectionTitle>{'What is your desirable spending?'}</SectionTitle>
         <SectionSubtitle>{'Scroll to find your budget'}</SectionSubtitle>
-        <WineSlider>
+        <WineSlider key={0} variants={liAnimations}>
           <WineSliderHeading>
             <Label>Low (5 - 20)</Label>
             <Line></Line>
           </WineSliderHeading>
-          <Slider className="price-range__slider" {...sliderSettings}>
+          <Slider {...sliderSettings}>
             <div>
               <WineElement onClick={() => url.push('/wine-detail')}>
                 <img src={wineBottle} alt={'Wine Bottle'} />
@@ -82,12 +102,12 @@ export default function PriceRange() {
             </div>
           </Slider>
         </WineSlider>
-        <WineSlider>
+        <WineSlider key={1} variants={liAnimations}>
           <WineSliderHeading>
             <Label>Medium (20 - 50)</Label>
             <Line></Line>
           </WineSliderHeading>
-          <Slider className="price-range__slider" {...sliderSettings}>
+          <Slider {...sliderSettings}>
             <div>
               <WineElement onClick={() => url.push('/wine-detail')}>
                 <img src={wineBottle} alt={'Wine Bottle'} />
@@ -120,12 +140,12 @@ export default function PriceRange() {
             </div>
           </Slider>
         </WineSlider>
-        <WineSlider>
+        <WineSlider key={2} variants={liAnimations}>
           <WineSliderHeading>
             <Label>High (50 - 100)</Label>
             <Line></Line>
           </WineSliderHeading>
-          <Slider className="price-range__slider" {...sliderSettings}>
+          <Slider {...sliderSettings}>
             <div>
               <WineElement onClick={() => url.push('/wine-detail')}>
                 <img src={wineBottle} alt={'Wine Bottle'} />

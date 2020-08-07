@@ -34,6 +34,8 @@ import suggestedCheese from '../../assets/images/cheese3.png';
 import cheeseSuggestionIcon from '../../assets/images/icon-wine-cheese.svg';
 import video from '../../assets/videos/main.mp4';
 import ArrowBack from '@material-ui/icons/ArrowBack';
+import { wrapperTransitions, textTransitions } from './wine-detail.transitions';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const useStylesFacebook = makeStyles((theme) => ({
   root: {
@@ -80,6 +82,27 @@ function FacebookCircularProgress(props) {
   );
 }
 
+const liAnimations = {
+  hidden:{
+    opacity: 0,
+    y: -100,
+  },
+  show:{
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    }
+  },
+  exit:{
+    y:-100,
+    opacity: 0,
+    transition: {
+      duration: 1,
+    }
+  },
+}
+
 export default function WineDetail() {
   const [progressOne, setProgressOne] = React.useState(0);
   const [progressTwo, setProgressTwo] = React.useState(0);
@@ -102,8 +125,31 @@ export default function WineDetail() {
     };
   }, []);
   
+  const WineGraphinfoVariant = {
+    hidden: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 1,
+      }
+    },
+
+    closed: {
+      opacity: 0,
+      transition: {
+        duration: 1,
+        delay: 1,
+      }
+    }
+  }
+
   return (
-    <Fragment>
+    <motion.div
+      variants={wrapperTransitions}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <Wrapper video={video} overlay overlayGradient={'bottom'} overlayColor={'rgba(0,0,0,.7)'}>
         { 
           !isLocationInfoVisible && !isCheeseInfoVisible &&
@@ -129,12 +175,13 @@ export default function WineDetail() {
                 <WineGraphLabel>{'Medium'}</WineGraphLabel>
                 <FacebookCircularProgress value={progressOne} />
                 <WineGraphName>{'TANNIN'}</WineGraphName>
-                <WineGraphInfoBtn onClick={() => {
-                  setIsWineInfovisible(true);
-                  setWineInfo({
-                    title: 'TANNIN',
-                    text: 'Tannins are substances found mainly in plants, bark, and leaves that create a drying, rubbing sensation on your tongue.'
-                  })
+                <WineGraphInfoBtn 
+                  onClick={() => {
+                    setIsWineInfovisible(true);
+                    setWineInfo({
+                      title: 'TANNIN',
+                      text: 'Tannins are substances found mainly in plants, bark, and leaves that create a drying, rubbing sensation on your tongue.'
+                    })
                 }} />
               </WineGraph>
               <WineGraph>
@@ -161,12 +208,23 @@ export default function WineDetail() {
                   })
                 }} />
               </WineGraph>
-              { isWineInfovisible &&
-                <WineGraphinfo>
-                  <strong>{wineInfo.title}</strong>
-                  <p>{wineInfo.text}</p>
-                </WineGraphinfo>
-              }
+              <AnimatePresence>
+                { isWineInfovisible &&
+                  <WineGraphinfo
+                    layout
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    transition={{duration: 1, ease: 'easeInOut'}}
+                  >
+                    <strong>{wineInfo.title}</strong>
+                    <p>{wineInfo.text}</p>
+                    <WineGraphInfoBtn onClick={() => {
+                      setIsWineInfovisible(false);
+                    }}/>
+                  </WineGraphinfo>
+                }
+              </AnimatePresence>
             </WineGraphGroup>
           </WineDetailInfo>
         }
@@ -238,6 +296,6 @@ export default function WineDetail() {
         <SuggestedCheese src={suggestedCheese} />
       }      
       <Nav />
-    </Fragment>
+    </motion.div>
   )
 }

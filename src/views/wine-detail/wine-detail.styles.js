@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const BottomCurve = styled.img`
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 100;
@@ -247,10 +248,12 @@ const CheeseSuggestion = styled.div`
   }
 `;
 
-const WineGraphinfo = styled.div`
+const WineGraphinfo = styled(motion.div)`
+  opacity: 0;
   background: linear-gradient(to bottom, rgba(165,2,56,1) 40%, transparent);
   padding: 1.5vw;
   border-radius: 1vw;
+  position: relative;
 
   strong {
     display: block;
